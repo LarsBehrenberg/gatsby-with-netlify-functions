@@ -9,7 +9,7 @@ const IndexPage = () => {
 
   const handleSubmit = () => {
     if (input) {
-      fetch(`/.netlify/functions/user-input?input=${input}`)
+      fetch(`/.netlify/functions/handle-user-input?input=${input}`)
         .then(res => res.text())
         .then(text => setAllInput([...allInput, text]))
     } else {
