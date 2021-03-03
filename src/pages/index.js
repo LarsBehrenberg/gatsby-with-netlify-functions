@@ -9,13 +9,9 @@ const IndexPage = () => {
 
   const handleSubmit = () => {
     if (input) {
-      try {
-        fetch(`/.netlify/functions/user-input?input=${input}`)
-          .then(res => res.text())
-          .then(text => setAllInput([...allInput, text]))
-      } catch {
-        console.warn("Something went wrong... I couldn't reach your server.")
-      }
+      fetch(`/.netlify/functions/user-input?input=${input}`)
+        .then(res => res.text())
+        .then(text => setAllInput([...allInput, text]))
     } else {
       window.alert("Please give me some input! 😥")
     }
